@@ -7,12 +7,12 @@ module "vpc" {
 
     subnets = [
         {
-            subnet_name           = "gaurav-subnet"
+            subnet_name           = "gau-subnet"
             subnet_ip             = "10.10.10.0/24"
             subnet_region         = var.region
         },
         {
-            subnet_name           = "subnet-02"
+            subnet_name           = "gau-subnet-02"
             subnet_ip             = "10.10.20.0/24"
             subnet_region         = var.region
             subnet_private_access = "true"
@@ -20,7 +20,7 @@ module "vpc" {
             description           = "This subnet has a description"
         },
         {
-            subnet_name                  = "subnet-03"
+            subnet_name                  = "gau-subnet-03"
             subnet_ip                    = "10.10.30.0/24"
             subnet_region                = var.region
             subnet_flow_logs             = "true"
