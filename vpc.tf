@@ -10,7 +10,7 @@ module "vpc" {
             subnet_name           = "d-network01"
             subnet_ip             = "10.10.10.0/24"
             subnet_region         = var.region
-        },
+        }
         
     ]
 }
