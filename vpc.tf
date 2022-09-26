@@ -1,14 +1,23 @@
 module "vpc" {
-  source  = "app.terraform.io/107lt/network/google"
-  version = "3.4.0"
-  # insert required variables here
-}
+    source  = "terraform-google-modules/network/google//modules/subnets"
+    version = "~> 3.4.0"
+
+    project_id   = var.project
+    network_name = "gaurav-network"
 
     subnets = [
         {
-            subnet_name           = "subnetwork"
+            subnet_name           = "gaurav-subnet"
             subnet_ip             = "10.10.10.0/24"
             subnet_region         = var.region
+        },
+        {
+            subnet_name           = "gau-subnet-02"
+            subnet_ip             = "10.10.20.0/24"
+            subnet_region         = var.region
+            subnet_private_access = "true"
+            subnet_flow_logs      = "true"
+            description           = "This subnet has a description"
         },
     ]
 
